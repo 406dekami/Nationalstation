@@ -1,0 +1,10 @@
+/* styles.css */
+.container {
+    width: 100%; /* 容器宽度设置为100% */
+    display: flex; /* 使用flex布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+.text {
+    text-align: center; /* 文本居中 */
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="这里是阿富汗人口信息页面">
+    <meta name="author" content="非凡大师小组">
+    <title>阿富汗人口信息</title>
+    <link rel="stylesheet" href="/static/font-awesome-4.4.0/css/font-awesome.min.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black; /* 添加黑色边框 */
+            background-color: white; /* 设置背景为白色 */
+            color: black; /* 设置文字颜色为黑色 */
+        }
+
+        table caption {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 1em 0;
+        }
+
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        table thead tr {
+            background-color: #008c8c;
+            color: #fff;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: #eee;
+        }
+
+        table tbody tr:hover {
+            background-color: #ccc;
+        }
+
+        table tbody tr td:first-child {
+            color: #f40;
+        }
+
+        table tfoot tr td {
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://x0.ifengimg.com/res/2021/CA81108C2FDFB047594DDF218FC838C0DDFCAFAF_size88_w750_h499.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+        }
+    </style>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            font-size: 0.8em; /* 缩小字体 */
+        }
+
+    </style>
+</head>
+<body>
+
+
+<button onclick="goBack()" style="background-color: #222222;
+        border: 10px;
+        color: #f0f0f0;
+        text-align: left;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 4px;
+        cursor: pointer;
+        border-radius: 10px;
+        height: 100%;">
+    <span>返回</span>
+</button>
+
+
+<div style="text-align: center;color: black">Afghanistan Population Entries</div>
+<table>
+    <caption>阿富汗人口现状</caption>
+    <thead>
+    <tr>
+        <th>年份</th>
+        <th>人口</th>
+        <th>年度百分比变化</th>
+        <th>年度变化</th>
+        <th>移民净流量</th>
+        <th>中位年龄</th>
+        <th>生育率</th>
+        <th>人口密度（每平方公里）</th>
+        <th>城市人口占比（%）</th>
+        <th>城市人口</th>
+        <th>国家在世界人口中的占比</th>
+        <th>世界人口</th>
+        <th>阿富汗全球排名</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for entry in entries %}
+        <tr>
+            <td>{{ entry.year }}</td>
+            <td>{{ entry.population }}</td>
+            <td>{{ entry.yearly_change }}</td>
+            <td>{{ entry.yearly_change_0 }}</td>
+            <td>{{ entry.migrants_net_field }}</td>
+            <td>{{ entry.median_age }}</td>
+            <td>{{ entry.fertility_rate }}</td>
+            <td>{{ entry.density_p_km2_field }}</td>
+            <td>{{ entry.urban_pop_field }}</td>
+            <td>{{ entry.urban_population }}</td>
+            <td>{{ entry.country_s_share_of_world_pop }}</td>
+            <td>{{ entry.world_population }}</td>
+            <td>{{ entry.afghanistanglobal_rank }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</html>
+
+
